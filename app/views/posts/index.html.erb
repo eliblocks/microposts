@@ -1,14 +1,16 @@
-Posts
-
 <%= form_with model: Post.new do |form| %>
   <%= form.text_area :content, class: "form-control", placeholder: "What is happening?!" %>
-  <%= form.submit "Post", class: "btn btn-primary" %>
+  <%= form.submit "Post", class: "btn btn-primary mt-2 mb-2" %>
 <% end %>
 
 <hr />
 
 <% @posts.each do |post| %>
-  <div>
-    <p><%= post.content %></p>
+  <div class="card mb-2">
+    <div class="card-header">
+      <%= post.user.username %> | <%= time_ago_in_words(post.created_at) %>
+    </div>
+    <div class="card-body"><%= post.content %></div>
   </div>
 <% end %>
+
