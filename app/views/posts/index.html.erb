@@ -1,5 +1,10 @@
-<%= form_with model: Post.new do |form| %>
-  <%= form.text_area :content, class: "form-control", placeholder: "What is happening?!" %>
+
+<% if @post.errors.any? %>
+  <%= @post.errors.full_messages[0] %>
+<% end %>
+
+<%= form_with model: @post do |form| %>
+  <%= form.text_area :content, class: "form-control", placeholder: "What is happening?!", rows: 3 %>
   <%= form.submit "Post", class: "btn btn-primary mt-2 mb-2" %>
 <% end %>
 
