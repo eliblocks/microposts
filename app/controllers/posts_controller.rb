@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @post = current_user&.posts&.new
-    @posts = Post.order(created_at: :desc)
+    set_posts
     @query = params[:q]
 
     if @query
@@ -21,9 +21,15 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
-      @posts = Post.order(created_at: :desc)
+      set_posts
       render 'index', status: :unprocessable_entity
     end
+  end
+
+  private
+
+  def set_posts
+    @posts = Post.includes(:user, original_post: :user).order(created_at: :desc)
   end
 
   def post_params
