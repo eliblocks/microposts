@@ -22,7 +22,9 @@
   <div class="card mb-2">
     <div id="card-<%= post.id %>">
       <div class="card-header">
-        <%= link_to(post.user.username, posts_path(username: post.user.username)) %> &bullet;
+        <%= link_to(post.user.username,
+          posts_path(username: post.user.username)) %>
+        &bullet;
         <%= time_ago_in_words(post.created_at) %> ago
       </div>
       <div class="card-body">
@@ -32,7 +34,9 @@
         <% if post.original_post %>
           <div class="card mt-2">
             <div class="card-header">
-              <%= link_to(post.original_post.user.username, posts_path(username: post.original_post.user.username)) %> &bullet;
+              <%= link_to(post.original_post.user.username,
+                posts_path(username: post.original_post.user.username)) %>
+              &bullet;
               <%= time_ago_in_words(post.original_post.created_at) %> ago
             </div>
             <div class="card-body">
@@ -45,7 +49,11 @@
       </div>
     </div>
     <div class="card-footer">
-      <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#post-modal" data-post-id=<%= post.id %>>
+      <button class="btn btn-outline-secondary"
+        data-bs-toggle="modal"
+        data-bs-target="#post-modal"
+        data-post-id=<%= post.id %>
+      >
         <%= post.reposts_count %> Reposts
       </button>
     </div>
