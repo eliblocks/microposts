@@ -1,0 +1,23 @@
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - Gemfile
+    - bin/bundle
+    - spec/spec_helper.rb
+    - spec/rails_helper.rb
+    - config/**/*
+    - db/**/*

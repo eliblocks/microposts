@@ -22,7 +22,7 @@ class PostsController < ApplicationController
       redirect_to posts_path
     else
       set_posts
-      render 'index', status: :unprocessable_entity
+      render "index", status: :unprocessable_entity
     end
   end
 
