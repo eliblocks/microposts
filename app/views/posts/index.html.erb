@@ -21,7 +21,7 @@
   <div class="card mb-2">
     <div id="card-<%= post.id %>">
       <div class="card-header">
-        <%= link_to(post.user.username, posts_path(username: post.user.username)) %> |
+        <%= link_to(post.user.username, posts_path(username: post.user.username)) %> &bullet;
         <%= time_ago_in_words(post.created_at) %> ago
       </div>
       <div class="card-body">
@@ -31,7 +31,7 @@
         <% if post.original_post %>
           <div class="card mt-2">
             <div class="card-header">
-              <%= link_to(post.original_post.user.username, posts_path(username: post.original_post.user.username)) %> |
+              <%= link_to(post.original_post.user.username, posts_path(username: post.original_post.user.username)) %> &bullet;
               <%= time_ago_in_words(post.original_post.created_at) %> ago
             </div>
             <div class="card-body">
