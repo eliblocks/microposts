@@ -1,6 +1,10 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Microposts</a>
+    <form class="d-flex" role="search" action="/">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q", value=<%= params[:q] %>>
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
       <% if user_signed_in? %>
        <li class="nav-item">
