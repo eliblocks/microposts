@@ -1,4 +1,4 @@
-
+<!-- Form -->
 <% if @post&.errors&.any? %>
   <%= @post.errors.full_messages[0] %>
 <% end %>
@@ -17,6 +17,7 @@
 
 <hr />
 
+<!-- Posts -->
 <% @posts.each do |post| %>
   <div class="card mb-2">
     <div id="card-<%= post.id %>">
